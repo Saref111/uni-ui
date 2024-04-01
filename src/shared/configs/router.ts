@@ -10,6 +10,6 @@ import { rootRoute } from 'src/app/App';
 const routeTree = rootRoute.addChildren([homeRoute, aboutRoute, notFoundRoute]);
 
 // Create the router using your route tree
-const router = new Router({ routeTree });
+const router = new Router({ basepath: '/uni-ui', routeTree });
 
 export default router;
