@@ -1,10 +1,10 @@
 // built-ins
 import { expectSaga } from 'redux-saga-test-plan';
 import { delay } from 'redux-saga/effects';
-import { describe, it } from '~libs/vitest';
+import { describe, it } from 'shared/libs/vitest';
 
 // redux
-import { actions, initialState, reducer } from '~features/Counter/redux';
+import { actions, initialState, reducer } from 'features/Counter/redux';
 import { watchDecrementAsync, watchIncrementAsync, watchIncrementByAmountAsync } from './saga';
 
 describe('Counter Saga Test Suite', () => {

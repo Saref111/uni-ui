@@ -8,15 +8,9 @@
     /* Bundler mode */
     "baseUrl": ".",
     "paths": {
-      "~components/*": ["./src/components/*"],
-      "~assets/*": ["./src/assets/*"],
-      "~configs/*": ["./src/configs/*"],
-      "~layouts/*": ["src/shared/layouts/*"],
-      "~pages/*": ["./src/pages/*"],
-      "~features/*": ["./src/features/*"],
-      "~constants/*": ["./src/constants/*"],
-      "~helpers/*": ["./src/helpers/*"],
-      "~libs/*": ["./src/libs/*"]
+      "shared/*": ["./src/shared/*"],
+      "pages/*": ["./src/pages/*"],
+      "features/*": ["./src/features/*"]
     },
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,

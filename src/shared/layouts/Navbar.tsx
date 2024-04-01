@@ -18,10 +18,10 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 
 // enums
-import Routes from '~constants/routes.enum';
+import Routes from 'shared/constants/routes.enum';
 
 // svgs
-import { ReactComponent as ViteLogo } from '~assets/vite.svg';
+import { ReactComponent as ViteLogo } from 'shared/assets/vite.svg';
 
 const links: Array<[Routes, string]> = [
   [Routes.HOME, 'Home'],

@@ -1,7 +1,7 @@
-import render, { describe, expect, it, screen, userEvent } from '~libs/vitest';
+import render, { describe, expect, it, screen, userEvent } from 'shared/libs/vitest';
 
 // configs
-import appRouter from '~configs/router';
+import appRouter from 'shared/configs/router';
 
 describe('App', () => {
   beforeEach(async () => {

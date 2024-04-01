@@ -9,7 +9,7 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 
 // hooks
-import { useAppDispatch, useAppSelector } from '~configs/store/hooks';
+import { useAppDispatch, useAppSelector } from 'shared/configs/store/hooks';
 
 // redux
 import { actions, selectors } from './redux';

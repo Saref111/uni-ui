@@ -16,14 +16,14 @@ import type { Router } from '@tanstack/router';
 import type { RenderOptions as RTLRenderOptions } from '@testing-library/react';
 
 // helpers
-import configureStore from '~helpers/configureStore';
-import createTestRouter from '~helpers/createTestRouter';
+import configureStore from 'shared/helpers/configureStore';
+import createTestRouter from 'shared/helpers/createTestRouter';
 
 // configs
-import appRouter from '~configs/router';
-import rootReducer from '~configs/store/rootReducer';
-import rootSaga from '~configs/store/rootSaga';
-import appTheme from '~configs/theme';
+import appRouter from 'shared/configs/router';
+import rootReducer from 'shared/configs/store/rootReducer';
+import rootSaga from 'shared/configs/store/rootSaga';
+import appTheme from 'shared/configs/theme';
 
 export interface RenderOptions extends Omit<RTLRenderOptions, 'wrappers'> {
   theme?: Theme;

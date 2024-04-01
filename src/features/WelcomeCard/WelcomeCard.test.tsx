@@ -1,7 +1,7 @@
-import render, { describe, expect, it, screen } from '~libs/vitest';
+import render, { describe, expect, it, screen } from 'shared/libs/vitest';
 
 // components
-import WelcomeCard from '~features/WelcomeCard';
+import WelcomeCard from 'features/WelcomeCard';
 
 // helpers
 

@@ -5,10 +5,10 @@ import { Route } from '@tanstack/router';
 import Container from '@mui/material/Container';
 
 // enums
-import Routes from '~constants/routes.enum';
+import Routes from 'shared/constants/routes.enum';
 
 // features
-import WelcomeCard from '~features/WelcomeCard';
+import WelcomeCard from 'features/WelcomeCard';
 
 // routes
 import { rootRoute } from 'src/app/App';

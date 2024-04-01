@@ -12,9 +12,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import './index.scss';
 
 // configs
-import router from '~configs/router';
-import store from '~configs/store';
-import theme from '~configs/theme';
+import router from 'shared/configs/router';
+import store from 'shared/configs/store';
+import theme from 'shared/configs/theme';
 
 // Register your router for maximum type safety
 declare module '@tanstack/router' {

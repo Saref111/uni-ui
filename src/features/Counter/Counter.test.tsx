@@ -1,14 +1,14 @@
-import render, { describe, expect, it, screen, userEvent, waitFor } from '~libs/vitest';
+import render, { describe, expect, it, screen, userEvent, waitFor } from 'shared/libs/vitest';
 
 // components
-import Counter from '~features/Counter';
+import Counter from 'features/Counter';
 
 // configs
-import rootReducer from '~configs/store/rootReducer';
-import rootSaga from '~configs/store/rootSaga';
+import rootReducer from 'shared/configs/store/rootReducer';
+import rootSaga from 'shared/configs/store/rootSaga';
 
 // helpers
-import configureStore from '~helpers/configureStore';
+import configureStore from 'shared/helpers/configureStore';
 
 describe('Counter Feature Test Suite', () => {
   beforeEach(async () => {

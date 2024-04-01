@@ -5,11 +5,11 @@ import CardActionArea from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 
 // svgs
-import reactLogo from '~assets/react.svg';
-import viteLogo from '~assets/vite.svg';
+import reactLogo from 'shared/assets/react.svg';
+import viteLogo from 'shared/assets/vite.svg';
 
 // features
-import Counter from '~features/Counter';
+import Counter from 'features/Counter';
 
 // styled components
 import Logo from './Logo.style';
