@@ -11,7 +11,7 @@ import Routes from '~constants/routes.enum';
 import WelcomeCard from '~features/WelcomeCard';
 
 // routes
-import { rootRoute } from 'src/App';
+import { rootRoute } from 'src/app/App';
 
 function Home() {
   return (

@@ -2,7 +2,7 @@
 import { Outlet, RootRoute } from '@tanstack/router';
 
 // Layouts
-import Navbar from '~layouts/Navbar';
+import Navbar from 'src/shared/layouts/Navbar';
 
 function App() {
   return (

@@ -11,7 +11,7 @@
       "~components/*": ["./src/components/*"],
       "~assets/*": ["./src/assets/*"],
       "~configs/*": ["./src/configs/*"],
-      "~layouts/*": ["./src/layouts/*"],
+      "~layouts/*": ["src/shared/layouts/*"],
       "~pages/*": ["./src/pages/*"],
       "~features/*": ["./src/features/*"],
       "~constants/*": ["./src/constants/*"],
