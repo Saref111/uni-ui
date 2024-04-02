@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // built-ins
-import { configureStore as createStore } from '@reduxjs/toolkit';
-import createSagaMiddleware from 'redux-saga';
-
-// types
 import type {
   Action,
   AnyAction,
@@ -14,6 +10,9 @@ import type {
   StoreEnhancer,
   ThunkMiddleware,
 } from '@reduxjs/toolkit';
+import { configureStore as createStore } from '@reduxjs/toolkit';
+import createSagaMiddleware from 'redux-saga';
+// types
 import type { Saga } from 'redux-saga';
 
 export interface ConfigureStoreProps<

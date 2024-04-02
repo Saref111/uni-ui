@@ -1,22 +1,25 @@
 // built-ins
+import Container from '@mui/material/Container';
 import { Route } from '@tanstack/router';
 
 // material ui components
-import Container from '@mui/material/Container';
 
 // enums
+import { rootRoute } from 'src/app/App';
+
+import Counter from 'features/Counter';
+import WelcomeCard from 'features/WelcomeCard';
+
 import Routes from 'shared/constants/routes.enum';
 
 // features
-import WelcomeCard from 'features/WelcomeCard';
 
 // routes
-import { rootRoute } from 'src/app/App';
 
 function About() {
   return (
     <Container maxWidth={false} sx={{ display: 'flex', height: '100vh', placeContent: 'center' }}>
-      <WelcomeCard title="About Page" />
+      <WelcomeCard title="About Page" renderCounter={() => <Counter />} />
     </Container>
   );
 }

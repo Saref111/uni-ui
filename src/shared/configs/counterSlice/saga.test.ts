@@ -1,10 +1,13 @@
 // built-ins
 import { expectSaga } from 'redux-saga-test-plan';
+// eslint-disable-next-line import/order
 import { delay } from 'redux-saga/effects';
+
+import { actions, initialState, reducer } from 'shared/configs/counterSlice';
 import { describe, it } from 'shared/libs/vitest';
 
 // redux
-import { actions, initialState, reducer } from 'features/Counter/redux';
+
 import { watchDecrementAsync, watchIncrementAsync, watchIncrementByAmountAsync } from './saga';
 
 describe('Counter Saga Test Suite', () => {

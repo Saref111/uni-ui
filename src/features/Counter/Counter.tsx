@@ -1,5 +1,4 @@
 // built-ins
-import { useRef } from 'react';
 
 // Material ui components
 import Box from '@mui/material/Box';
@@ -7,12 +6,13 @@ import Button from '@mui/material/Button';
 import CircularProgress from '@mui/material/CircularProgress';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import { useRef } from 'react';
 
 // hooks
-import { useAppDispatch, useAppSelector } from 'shared/configs/store/hooks';
+import { actions, selectors } from 'shared/configs/counterSlice';
+import { useAppDispatch, useAppSelector } from 'shared/configs/store';
 
 // redux
-import { actions, selectors } from './redux';
 
 function Counter() {
   const inputRef = useRef<HTMLInputElement>(null);

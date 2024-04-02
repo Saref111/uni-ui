@@ -1,8 +1,7 @@
 // type
 import type { SliceActions } from 'shared/helpers/configureStore';
 
-// feature redux
-import * as counter from 'features/Counter/redux';
+import * as counter from '../counterSlice';
 
 const rootActions = {
   ...counter.actions,

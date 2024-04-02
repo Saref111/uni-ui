@@ -1,7 +1,9 @@
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { Provider } from 'react-redux';
+
 import store from 'shared/configs/store';
 import theme from 'shared/configs/theme';
+
 import Counter from './Counter';
 
 describe('<Counter />', () => {

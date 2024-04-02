@@ -1,14 +1,13 @@
-import render, { describe, expect, it, screen, userEvent, waitFor } from 'shared/libs/vitest';
-
+/* eslint-disable no-restricted-imports */
 // components
 import Counter from 'features/Counter';
 
 // configs
 import rootReducer from 'shared/configs/store/rootReducer';
 import rootSaga from 'shared/configs/store/rootSaga';
-
 // helpers
 import configureStore from 'shared/helpers/configureStore';
+import render, { describe, expect, it, screen, userEvent, waitFor } from 'shared/libs/vitest';
 
 describe('Counter Feature Test Suite', () => {
   beforeEach(async () => {

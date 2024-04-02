@@ -3,18 +3,15 @@ import { Typography } from '@mui/material';
 import Card from '@mui/material/Card';
 import CardActionArea from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
+import type { ReactNode } from 'react';
 
-// svgs
 import reactLogo from 'shared/assets/react.svg';
 import viteLogo from 'shared/assets/vite.svg';
-
-// features
-import Counter from 'features/Counter';
 
 // styled components
 import Logo from './Logo.style';
 
-function WelcomeCard({ title = 'Welcome' }: { title: string }) {
+function WelcomeCard({ title = 'Welcome', renderCounter }: { title: string; renderCounter: () => ReactNode }) {
   return (
     <Card sx={{ background: 'palette.background.paper', margin: 'auto', textAlign: 'center' }} className=" WelcomeCard p-8">
       <Typography component="h1" sx={{ fontSize: '2.5rem' }}>
@@ -30,7 +27,7 @@ function WelcomeCard({ title = 'Welcome' }: { title: string }) {
       </CardContent>
       <Typography variant="h5">{title}</Typography>
       <CardContent className="p-0">
-        <Counter />
+        {renderCounter()}
         <Typography className="my-5">
           Edit <code>src/App.tsx</code> and save to test HMR
         </Typography>

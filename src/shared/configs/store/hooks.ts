@@ -1,11 +1,12 @@
 // built-ins
-import { useDispatch, useSelector } from 'react-redux';
-
-// types
 import type { Dispatch } from '@reduxjs/toolkit';
+import { useDispatch, useSelector } from 'react-redux';
+// types
 import type { TypedUseSelectorHook } from 'react-redux';
-import type { StateType } from './index';
+
 import type { RootActionType } from './rootActions';
+
+import type { StateType } from './index';
 
 export type DispatchType = Dispatch<RootActionType>;
 export type SelectorType = TypedUseSelectorHook<StateType>;

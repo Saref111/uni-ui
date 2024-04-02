@@ -21,11 +21,19 @@ module.exports = defineConfig({
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:tailwindcss/recommended',
+    'plugin:boundaries/recommended',
   ],
   overrides: [
     {
       files: ['*.test.{ts|tsx}', '*.cy.ts'],
       rules: {
+        'import/no-extraneous-dependencies': 'off',
+      },
+    },
+    {
+      files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
+      rules: {
+        'boundaries/element-types': 'off',
         'import/no-extraneous-dependencies': 'off',
       },
     },
@@ -49,6 +57,20 @@ module.exports = defineConfig({
     '@typescript-eslint/consistent-type-imports': 'warn',
     '@typescript-eslint/no-unused-vars': 'error',
     '@typescript-eslint/prefer-as-const': 'warn',
+    'boundaries/element-types': [
+      'warn',
+      {
+        default: 'disallow',
+        rules: [
+          { allow: ['pages', 'widgets', 'features', 'entities', 'shared'], from: 'processes' },
+          { allow: ['widgets', 'features', 'entities', 'shared'], from: 'pages' },
+          { allow: ['features', 'entities', 'shared', 'widgets'], from: 'widgets' },
+          { allow: ['entities', 'shared'], from: 'features' },
+          { allow: ['shared'], from: 'entities' },
+          { allow: ['shared'], from: 'shared' },
+        ],
+      },
+    ],
     'import/default': 'error',
     'import/export': 'error',
     'import/named': 'error',
@@ -58,8 +80,44 @@ module.exports = defineConfig({
     'import/no-named-as-default': 'error',
     'import/no-named-as-default-member': 'off',
     'import/no-namespace': 'off',
+    'import/order': [
+      'error',
+      {
+        alphabetize: { caseInsensitive: true, order: 'asc' },
+        groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
+        'newlines-between': 'always',
+        pathGroups: [
+          { group: 'internal', pattern: 'processes/**', position: 'after' },
+          { group: 'internal', pattern: 'pages/**', position: 'after' },
+          { group: 'internal', pattern: 'widgets/**', position: 'after' },
+          { group: 'internal', pattern: 'features/**', position: 'after' },
+          { group: 'internal', pattern: 'entities/**', position: 'after' },
+          { group: 'internal', pattern: 'shared/**', position: 'after' },
+        ],
+        pathGroupsExcludedImportTypes: ['builtin'],
+      },
+    ],
     'linebreak-style': 0,
     'no-loops/no-loops': 1,
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          { group: ['processes/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['pages/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['widgets/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['features/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['entities/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['shared/*/*/**'], message: 'Private imports are prohibited, use public imports instead' },
+          { group: ['../**/processes'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+          { group: ['../**/pages'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+          { group: ['../**/widgets'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+          { group: ['../**/features'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+          { group: ['../**/entities'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+          { group: ['../**/shared'], message: 'Prefer absolute imports instead of relatives (for root modules)' },
+        ],
+      },
+    ],
     'prettier/prettier': ['error', {}, { properties: { usePrettierrc: true } }],
     quotes: ['error', 'single'],
     'react-hooks/rules-of-hooks': 'error',
@@ -71,6 +129,15 @@ module.exports = defineConfig({
     'tailwindcss/no-custom-classname': 0,
   },
   settings: {
+    'boundaries/elements': [
+      { pattern: 'processes/*', type: 'processes' },
+      { pattern: 'pages/*', type: 'pages' },
+      { pattern: 'widgets/*', type: 'widgets' },
+      { pattern: 'features/*', type: 'features' },
+      { pattern: 'entities/*', type: 'entities' },
+      { pattern: 'shared/*', type: 'shared' },
+    ],
+    'boundaries/ignore': ['**/*.test.*', '**/*.cjs'],
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },

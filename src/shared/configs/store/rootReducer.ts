@@ -1,5 +1,5 @@
 // feature redux
-import * as counter from 'features/Counter/redux';
+import * as counter from 'shared/configs/counterSlice';
 
 const rootReducer = {
   counter: counter.reducer,

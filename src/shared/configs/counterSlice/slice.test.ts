@@ -1,11 +1,10 @@
-import { describe, expect, it, vi, waitFor } from 'shared/libs/vitest';
-
 // helpers
 import configureStore from 'shared/helpers/configureStore';
-
 // redux
-import { actions, initialState, reducer, saga } from 'features/Counter/redux';
 import getRootSaga from 'shared/helpers/getRootSaga';
+import { describe, expect, it, vi, waitFor } from 'shared/libs/vitest';
+
+import { actions, initialState, reducer, saga } from '.';
 
 describe('Counter Reducer Test Suite', () => {
   const store = configureStore({

@@ -1,6 +1,5 @@
 // feature redux
-import * as counter from 'features/Counter/redux';
-
+import * as counter from 'shared/configs/counterSlice';
 // helpers
 import getRootSaga from 'shared/helpers/getRootSaga';
 

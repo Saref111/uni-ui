@@ -1,8 +1,7 @@
 // built-ins
-import { delay, put, takeEvery } from 'redux-saga/effects';
-
-// types
 import type { PayloadAction } from '@reduxjs/toolkit';
+import { delay, put, takeEvery } from 'redux-saga/effects';
+// types
 import type { Effect, ForkEffect } from 'redux-saga/effects';
 
 // actions

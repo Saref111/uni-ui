@@ -1,11 +1,4 @@
-// built-ins
-import { Link } from '@tanstack/router';
-import React, { useState } from 'react';
-
-// icons
 import MenuIcon from '@mui/icons-material/Menu';
-
-// material ui components
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -16,12 +9,11 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Link } from '@tanstack/router';
+import React, { useState } from 'react';
 
-// enums
-import Routes from 'shared/constants/routes.enum';
-
-// svgs
 import { ReactComponent as ViteLogo } from 'shared/assets/vite.svg';
+import Routes from 'shared/constants/routes.enum';
 
 const links: Array<[Routes, string]> = [
   [Routes.HOME, 'Home'],
