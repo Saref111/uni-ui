@@ -10,7 +10,8 @@ import { act, render as rtlRender } from '@testing-library/react';
 import user from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 
-import appRouter from 'shared/configs/router';
+import appRouter from 'src/app/router';
+
 import { rootReducer, rootSaga } from 'shared/configs/store';
 import appTheme from 'shared/configs/theme';
 import configureStore from 'shared/helpers/configureStore';

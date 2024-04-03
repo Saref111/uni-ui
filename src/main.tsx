@@ -12,7 +12,8 @@ import { Provider } from 'react-redux';
 import './index.scss';
 
 // configs
-import router from 'shared/configs/router';
+import router from 'src/app/router';
+
 import store from 'shared/configs/store';
 import theme from 'shared/configs/theme';
 
