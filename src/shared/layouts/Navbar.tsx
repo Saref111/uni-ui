@@ -15,7 +15,10 @@ import React, { useState } from 'react';
 import { ReactComponent as ViteLogo } from 'shared/assets/vite.svg';
 import Routes from 'shared/constants/routes.enum';
 
-const links: Array<[Routes, string]> = [[Routes.HOME, 'Home']];
+const links: Array<[Routes, string]> = [
+  [Routes.HOME, 'Home'],
+  [Routes.CHAT_PAGE, 'Chat'],
+];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
