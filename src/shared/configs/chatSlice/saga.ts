@@ -1,14 +1,18 @@
-// built-ins
-import { delay, put, takeEvery } from 'redux-saga/effects';
-// types
 import type { Effect, ForkEffect } from 'redux-saga/effects';
+import { call, put, select, takeEvery } from 'redux-saga/effects';
 
-// actions
+import api from 'shared/api';
+
+import { selectChatState } from './selectors';
+import type { initialState } from './slice';
 import { actions } from './slice';
+
+type ChatState = typeof initialState;
+const { localDbApi } = api;
 
 export function* loadChat(): Generator<Effect, void> {
   try {
-    yield delay(1000); // TODO: replace with API call
+    yield call(localDbApi.getChatFromStorage);
     yield put(actions.onChatSuccess());
   } catch (error) {
     yield put(actions.onChatFailure('Something went wrong!'));
@@ -17,7 +21,8 @@ export function* loadChat(): Generator<Effect, void> {
 
 export function* saveChat(): Generator<Effect, void> {
   try {
-    yield delay(1000); // TODO: replace with API call
+    const chatState = yield select(selectChatState);
+    yield call(localDbApi.saveChatToStorage, chatState as ChatState);
     yield put(actions.onChatSuccess());
   } catch (error) {
     yield put(actions.onChatFailure('Something went wrong!'));
