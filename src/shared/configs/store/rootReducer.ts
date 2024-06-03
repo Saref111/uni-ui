@@ -1,8 +1,9 @@
 // feature redux
-import * as counter from 'shared/configs/counterSlice';
+import * as chat from 'shared/configs/chatSlice';
 
 const rootReducer = {
-  counter: counter.reducer,
+  // counter: counter.reducer,
+  chat: chat.reducer,
 };
 
 export type RootReducerType = typeof rootReducer;
